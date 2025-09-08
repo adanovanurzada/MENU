@@ -64,10 +64,10 @@ class ImagesSerializer(serializers.ModelSerializer):
 
 
 class RestaurantImagesSerializer(serializers.ModelSerializer):
-    images = ImagesSerializer(many=True, read_only=True)
+    imagess = ImagesSerializer(many=True, read_only=True)
     class Meta:
         model = RestaurantImages
-        fields = ['label', 'image']
+        fields = ['label', 'imagess']
 
 
 class DaysSerializer(serializers.ModelSerializer):
