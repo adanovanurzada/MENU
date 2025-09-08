@@ -67,7 +67,7 @@ class RestaurantImagesSerializer(serializers.ModelSerializer):
     images = ImagesSerializer(many=True, read_only=True)
     class Meta:
         model = RestaurantImages
-        fields = '__all__'
+        fields = ['label', 'image']
 
 
 class DaysSerializer(serializers.ModelSerializer):
