@@ -11,12 +11,12 @@ class MainSerializers(serializers.ModelSerializer):
 class ContactSerializers(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = '__all__'
+        fields = ['label_name', 'image_name' , 'name', 'label_phone', 'image_phone', 'phone']
 
 class AboutUsSerializers(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
-        fields  = '__all__'
+        fields  = ['label', 'title', 'description', 'image_one', 'image_two']
 
 
 class BestSellerImageSerializers(serializers.ModelSerializer):
