@@ -3,13 +3,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Main(models.Model):
-    restaurant_name = models.CharField(max_length=64)
-    title = models.CharField(max_length=64)
+    restaurant_name = models.CharField(max_length=240)
+    title = models.CharField(max_length=240)
     description = models.TextField()
-    locations_title = models.CharField(max_length=64)
-    locations = models.CharField(max_length=127)
+    locations_title = models.CharField(max_length=240)
+    locations = models.CharField(max_length=240)
     image = models.ImageField(upload_to='main_images/')
-    phonenumbers_title = models.CharField(max_length=64)
+    phonenumbers_title = models.CharField(max_length=240)
     phonenumbers = PhoneNumberField(region='KG')
 
     def __str__(self):
@@ -17,10 +17,10 @@ class Main(models.Model):
 
 
 class Contact(models.Model):
-    label_name = models.CharField(max_length=27)
+    label_name = models.CharField(max_length=240)
     image_name = models.ImageField(upload_to='name_image/')
-    name = models.CharField(max_length=32)
-    label_phone = models.CharField(max_length=27)
+    name = models.CharField(max_length=240)
+    label_phone = models.CharField(max_length=240)
     image_phone = models.ImageField(upload_to='phone_image/')
     phone = PhoneNumberField(region='KG', unique=True)
 
@@ -29,8 +29,8 @@ class Contact(models.Model):
         return f'{self.name}'
 
 class AboutUs(models.Model):
-    label = models.CharField(max_length=27)
-    title = models.CharField(max_length=127)
+    label = models.CharField(max_length=240)
+    title = models.CharField(max_length=240)
     description = models.TextField()
     image_one = models.ImageField(upload_to='images_one/')
     image_two = models.ImageField(upload_to='images_two/')
@@ -40,8 +40,8 @@ class AboutUs(models.Model):
 
 
 class BestSeller(models.Model):
-    label = models.CharField(max_length=27)
-    title = models.CharField(max_length=64)
+    label = models.CharField(max_length=240)
+    title = models.CharField(max_length=240)
     description = models.TextField()
 
     def __str__(self):
@@ -56,20 +56,20 @@ class BestSellerImages(models.Model):
         return f'{self.best_seller}'
 
 class Menu(models.Model):
-    label = models.CharField(max_length=27)
-    title = models.CharField(max_length=64)
+    label = models.CharField(max_length=240)
+    title = models.CharField(max_length=240)
 
     def __str__(self):
         return f'{self.label}'
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=27)
+    category_name = models.CharField(max_length=240)
 
     def __str__(self):
         return f'{self.category_name}'
 
 class Products(models.Model):
-    title = models.CharField(max_length=64)
+    title = models.CharField(max_length=240)
     description = models.TextField()
     price = models.DecimalField(max_digits=7, decimal_places=2)
     ingredients = models.TextField()
@@ -89,7 +89,7 @@ class ProductsImage(models.Model):
 
 
 class RestaurantImages(models.Model):
-    label = models.CharField(max_length=27)
+    label = models.CharField(max_length=240)
 
 
     def __str__(self):
@@ -104,13 +104,13 @@ class Images(models.Model):
 
 
 class Info(models.Model):
-    label = models.CharField(max_length=32)
-    title = models.CharField(max_length=64)
-    label_region = models.CharField(max_length=128)
-    title_region = models.CharField(max_length=255)
-    regions = models.CharField(max_length=127)
-    label_schedule = models.CharField(max_length=27)
-    label_phone = models.CharField(max_length=27)
+    label = models.CharField(max_length=240)
+    title = models.CharField(max_length=240)
+    label_region = models.CharField(max_length=240)
+    title_region = models.CharField(max_length=240)
+    regions = models.CharField(max_length=240)
+    label_schedule = models.CharField(max_length=240)
+    label_phone = models.CharField(max_length=240)
     phone = PhoneNumberField(region='KG')
     email = models.EmailField(unique=True)
 
